@@ -16,7 +16,7 @@ const AddInput = (props) => {
     <Container>
       <input
         type="text" 
-        placeholder="현대암호학 공부"
+        placeholder="할 일을 입력해주세요"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
