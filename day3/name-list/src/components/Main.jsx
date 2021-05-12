@@ -19,14 +19,9 @@ const Main = () => {
       <span className="title blue-text">Name List</span>
       <NameInput addClick={(val)=>{ addName(val)}}/>
       <div className="list-container">
-        <NameDisplay>
-            {nameList.map((Name,index) =>
-              <li key={index}>
-                {Name}
-              </li>
-
-            )} 
-        </NameDisplay>
+        {nameList.map((Name)=>
+          <NameDisplay name={Name}/>
+        )}
       </div>
     </div>
   );
