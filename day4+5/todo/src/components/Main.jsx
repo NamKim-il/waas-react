@@ -11,28 +11,22 @@ const Main = () => {
     setTodo([...todo, val]);
   };
   const delTodo = (val) => {
-    console.log(1);
-    console.log(todo);
-    setTodo(todo.splice(todo.indexOf(val), 1));
-    console.log(todo);
-    
-  };
-  const addDone = (val) => {
-    console.log(2);
-    setDone([...done, val]);
-    if(todo.indexOf(val)<0) return;
-    else {
-      delTodo(todo.indexOf(val)); 
-      console.log(val);
-      console.log(todo);
+    let tmp=[...todo];
+    if(tmp.indexOf(val)>=0) {
+      tmp.splice(tmp.indexOf(val),1);
+      setTodo(tmp);
     }
   };
+  const addDone = (val) => {
+    setDone([...done, val]);
+    delTodo(val);
+  };
   const delDone = (val) => {
-    console.log(3);
     if(done.indexOf(val)<0) return;
     else {
-      setDone(done.splice(done.indexOf(val),1));
-      console.log(done);
+      let tmp=[...done];
+      tmp.splice(tmp.indexOf(val), 1);
+      setDone(tmp);
     }
   };
   return (
